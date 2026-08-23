@@ -1,0 +1,110 @@
+---
+// Streak component
+---
+<section id="streak" class="section-pad" style="max-width:1120px;margin:0 auto;padding:112px 32px 0">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap">
+    <div>
+      <div style="font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#AAEC58">Streak</div>
+      <h2 class="section-title" style="margin:14px 0 0;font-size:40px;line-height:1.1;font-weight:700;letter-spacing:-.028em;max-width:520px">
+        Show up today. Beat your longest.
+      </h2>
+    </div>
+    <p style="margin:0;max-width:400px;font-size:15.5px;line-height:1.6;color:rgba(242,244,245,.65)">
+      Your current streak follows you across Home, History and Progress, so the next day is always the obvious one. Your longest streak sits beside it as the number to chase.
+    </p>
+  </div>
+
+  <div class="streak-grid" style="margin-top:40px;display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:stretch">
+    <div class="streak-card-inner" style="border-radius:26px;background:#AAEC58;color:#0B0E11;padding:34px 34px 32px;display:flex;flex-direction:column;box-shadow:0 20px 40px -15px rgba(170,236,88,0.25)">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:30px;flex-wrap:wrap">
+        <div>
+          <div style="font:700 74px/.85 'Space Grotesk', sans-serif;letter-spacing:-.03em">5</div>
+          <div style="margin-top:9px;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.11em;opacity:.65">day streak</div>
+        </div>
+        <div style="text-align:right">
+          <div style="display:flex;gap:11px;justify-content:flex-end">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
+              <div style="width:15px;height:15px;border-radius:5px;background:rgba(11,14,17,.16)"></div>
+              <span style="font-size:10px;font-weight:500;opacity:.5">M</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
+              <div style="width:15px;height:15px;border-radius:5px;background:rgba(11,14,17,.16)"></div>
+              <span style="font-size:10px;font-weight:500;opacity:.5">T</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
+              <div style="width:15px;height:15px;border-radius:5px;background:#0B0E11"></div>
+              <span style="font-size:10px;font-weight:500;opacity:.5">W</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
+              <div style="width:15px;height:15px;border-radius:5px;background:#0B0E11"></div>
+              <span style="font-size:10px;font-weight:500;opacity:.5">T</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
+              <div style="width:15px;height:15px;border-radius:5px;background:#0B0E11"></div>
+              <span style="font-size:10px;font-weight:500;opacity:.5">F</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
+              <div style="width:15px;height:15px;border-radius:5px;background:#0B0E11"></div>
+              <span style="font-size:10px;font-weight:500;opacity:.5">S</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
+              <div style="width:15px;height:15px;border-radius:5px;background:#0B0E11;box-shadow:0 0 0 4px rgba(11,14,17,.14)"></div>
+              <span style="font-size:10px;font-weight:700;opacity:.85">S</span>
+            </div>
+          </div>
+          <div style="margin-top:16px;font-size:13px;font-weight:600;opacity:.7">6 more days to beat your best</div>
+        </div>
+      </div>
+      <div style="flex:1;min-height:24px"></div>
+      <div style="margin-top:30px;height:1px;background:rgba(11,14,17,.14)"></div>
+      <div style="margin-top:22px;display:flex;gap:34px;flex-wrap:wrap">
+        <div>
+          <div style="font:700 24px 'Space Grotesk', sans-serif;letter-spacing:-.02em">11</div>
+          <div style="margin-top:2px;font-size:11px;font-weight:600;opacity:.65">longest streak</div>
+        </div>
+        <div>
+          <div style="font:700 24px 'Space Grotesk', sans-serif;letter-spacing:-.02em">24</div>
+          <div style="margin-top:2px;font-size:11px;font-weight:600;opacity:.65">sessions</div>
+        </div>
+        <div>
+          <div style="font:700 24px 'Space Grotesk', sans-serif;letter-spacing:-.02em">412</div>
+          <div style="margin-top:2px;font-size:11px;font-weight:600;opacity:.65">total reps</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-radius:26px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.06);padding:30px 30px 32px;display:flex;flex-direction:column;gap:14px">
+      <div style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8b99b0">Where you'll see it</div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="background:rgba(255,255,255,.05);border-radius:16px;padding:14px 16px">
+          <div style="font-size:13.5px;font-weight:600">Home</div>
+          <div style="margin-top:11px;display:flex;align-items:center;gap:12px">
+            <div style="display:flex;align-items:baseline;gap:6px">
+              <span style="font:700 19px 'Space Grotesk', sans-serif;color:#AAEC58;line-height:1">5</span>
+              <span style="font-size:9.5px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:#8b99b0">day streak</span>
+            </div>
+            <div style="margin-left:auto;display:flex;gap:6px">
+              <div style="width:8px;height:8px;border-radius:3px;background:rgba(255,255,255,.14)"></div>
+              <div style="width:8px;height:8px;border-radius:3px;background:rgba(255,255,255,.14)"></div>
+              <div style="width:8px;height:8px;border-radius:3px;background:#AAEC58"></div>
+              <div style="width:8px;height:8px;border-radius:3px;background:#AAEC58"></div>
+              <div style="width:8px;height:8px;border-radius:3px;background:#AAEC58"></div>
+              <div style="width:8px;height:8px;border-radius:3px;background:#AAEC58"></div>
+              <div style="width:8px;height:8px;border-radius:3px;background:#AAEC58;box-shadow:0 0 0 3px rgba(170,236,88,.25)"></div>
+            </div>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,.05);border-radius:16px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between">
+          <div style="font-size:13.5px;font-weight:600">History</div>
+          <div style="font-size:12.5px;font-weight:500;color:#8b99b0">Above the session list</div>
+        </div>
+        <div style="background:rgba(255,255,255,.05);border-radius:16px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between">
+          <div style="font-size:13.5px;font-weight:600">Progress</div>
+          <div style="font-size:12.5px;font-weight:500;color:#8b99b0">Full card, top of tab</div>
+        </div>
+      </div>
+      <div style="flex:1"></div>
+      <div style="font-size:13px;line-height:1.5;color:#8b99b0">Nowhere else. Settings and the counting screen stay clean.</div>
+    </div>
+  </div>
+</section>

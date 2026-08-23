@@ -1,0 +1,14 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="48" fill="#0B0E11"/>
+  <defs>
+    <radialGradient id="icon-glow" cx="50%" cy="34%" r="62%">
+      <stop offset="0%" stop-color="#AAEC58" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#AAEC58" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" rx="48" fill="url(#icon-glow)"/>
+  <rect width="200" height="200" rx="48" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  <path d="M52 68 L100 108 L148 60" stroke="#AAEC58" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M52 108 L100 68 L148 108" stroke="#AAEC58" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+  <line x1="80" y1="140" x2="120" y2="140" stroke="#AAEC58" stroke-width="10" stroke-linecap="round" opacity="0.85"/>
+</svg>

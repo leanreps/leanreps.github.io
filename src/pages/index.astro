@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import FormScoring from '../components/FormScoring.astro';
+import Streak from '../components/Streak.astro';
+import ProgressPrivacy from '../components/ProgressPrivacy.astro';
+import Cta from '../components/Cta.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="LeanReps — Every rep, counted for you">
+  <div style="background:#05070a;color:#F2F4F5;font-family:'Outfit',sans-serif;min-height:100vh;overflow-x:clip">
+    <Nav />
+    <main>
+      <Hero />
+      <HowItWorks />
+      <FormScoring />
+      <Streak />
+      <ProgressPrivacy />
+      <Cta />
+    </main>
+    <Footer />
+  </div>
+</Layout>

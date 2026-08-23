@@ -1,0 +1,224 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "LeanReps — Every rep, counted for you",
+  description = "LeanReps watches through your phone camera, counts your push-ups automatically, and scores your form on depth, elbow tuck and tempo. No taps mid-set. Nothing leaves your device.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#05070a" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --bg-primary: #05070a;
+    --bg-surface: #0B0E11;
+    --accent-lime: #AAEC58;
+    --accent-lime-hover: #bcf772;
+    --accent-dark: #0B0E11;
+    --text-primary: #F2F4F5;
+    --text-muted: #8b99b0;
+    --text-faint: rgba(242, 244, 245, 0.45);
+    --card-bg: rgba(255, 255, 255, 0.045);
+    --card-bg-subtle: rgba(255, 255, 255, 0.05);
+    --border-subtle: rgba(255, 255, 255, 0.07);
+    --border-card: rgba(255, 255, 255, 0.12);
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    color: var(--accent-lime);
+    text-decoration: none;
+    transition: color 0.15s ease, opacity 0.15s ease;
+  }
+
+  a:hover {
+    color: var(--accent-lime-hover);
+  }
+
+  button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+  }
+
+  @keyframes pfCount {
+    0%,
+    42% {
+      transform: translateY(0) scale(1);
+    }
+    55% {
+      transform: translateY(4px) scale(0.97);
+    }
+    100% {
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Responsive helper styles */
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr !important;
+      gap: 48px !important;
+      padding-top: 48px !important;
+      text-align: center;
+    }
+
+    .hero-badge-container {
+      justify-content: center;
+    }
+
+    .hero-heading {
+      font-size: 52px !important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-desc {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .hero-buttons {
+      justify-content: center !important;
+    }
+
+    .hero-stats {
+      justify-content: center !important;
+      gap: 28px !important;
+    }
+
+    .how-grid {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+    }
+
+    .form-grid {
+      grid-template-columns: 1fr !important;
+      gap: 48px !important;
+    }
+
+    .streak-grid {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+    }
+
+    .privacy-grid {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+    }
+
+    .cta-container {
+      flex-direction: column !important;
+      padding: 44px 32px !important;
+      text-align: center;
+    }
+
+    .cta-container h2,
+    .cta-container p {
+      max-width: 100% !important;
+    }
+
+    .cta-buttons {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .nav-inner {
+      padding: 14px 20px !important;
+    }
+
+    .nav-links {
+      display: none !important;
+    }
+
+    .hero-heading {
+      font-size: 40px !important;
+    }
+
+    .section-pad {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      padding-top: 72px !important;
+    }
+
+    .section-title {
+      font-size: 32px !important;
+    }
+
+    .streak-card-inner {
+      padding: 24px 20px 24px !important;
+    }
+
+    .cta-banner {
+      padding: 40px 24px !important;
+    }
+
+    .cta-banner h2 {
+      font-size: 32px !important;
+    }
+
+    .footer-inner {
+      flex-direction: column !important;
+      gap: 20px !important;
+      text-align: center;
+      padding: 40px 20px 36px !important;
+    }
+  }
+</style>
