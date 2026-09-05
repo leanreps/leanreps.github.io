@@ -1,0 +1,146 @@
+---
+// FAQ component
+const faqs = [
+  {
+    q: "Does it really count every rep?",
+    a: "Yes, and it's watching your body, not a timer. If a rep doesn't reach depth it still counts, but it pulls your depth score down — that's the point."
+  },
+  {
+    q: "What if it miscounts?",
+    a: "It can, mostly when your whole body isn't in frame or the room is very dark. Reframe and it recovers. There is no manual mid-set editing — just reframe and keep going."
+  },
+  {
+    q: "How do I set up my phone?",
+    a: "Prop it about four feet away at floor level, landscape, whole body in frame. A countdown gives you time to get down and set."
+  },
+  {
+    q: "Do I need a tripod?",
+    a: "No. Lean it against a wall, a water bottle, a shoe. It just needs to sit still and see all of you."
+  },
+  {
+    q: "Which push-ups does it support?",
+    a: "Standard push-ups, front view, right now. Incline, knee, and diamond variations are next, followed by squats and other bodyweight movements."
+  },
+  {
+    q: "Does it work in a dark room?",
+    a: "It needs enough light to clearly see your body outline. Normal indoor room lighting or daylight is plenty, but pitch darkness won't work."
+  },
+  {
+    q: "Is my video recorded or uploaded?",
+    a: "No. Frames are processed on your device and discarded immediately. Nothing is saved, nothing is sent, and there's no server to send it to."
+  },
+  {
+    q: "Do I need an account?",
+    a: "No account, no email, no login. Open it and start."
+  },
+  {
+    q: "Does it work offline?",
+    a: "Yes. Everything runs on your phone, so airplane mode is fine."
+  },
+  {
+    q: "Which phones does it work on?",
+    a: "LeanReps supports devices running Android 8.0 and above, as well as iOS 18.2 and newer."
+  },
+  {
+    q: "Will it drain my battery?",
+    a: "Very little — typically around 1–2% for a standard 10–15 minute workout session."
+  },
+  {
+    q: "Is it free?",
+    a: "LeanReps is completely free during our initial rollout while we bring the system to production grade with real users. You get full access to all features with zero ads and no credit card required. Once we reach our target standards and build our core community, we plan to introduce paid options."
+  },
+  {
+    q: "Do I need a watch or any other hardware?",
+    a: "No. Just your phone."
+  },
+  {
+    q: "What happens to my history if I get a new phone?",
+    a: "Your workout history is stored strictly on your local device for privacy. We are working on a local data export and transfer feature for an upcoming update."
+  },
+  {
+    q: "Do I need headphones for the voice cues?",
+    a: "No, your phone's built-in speaker is plenty. Voice cues can be toggled on or off per exercise in Settings, and you can also adjust default values and targets for each exercise."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
+---
+
+<section id="faq" class="section-pad" style="max-width:960px;margin:0 auto;padding:112px 32px 0">
+  <div style="text-align:center">
+    <div style="font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#AAEC58">Common questions</div>
+    <h2 class="section-title" style="margin:14px auto 0;font-size:40px;line-height:1.1;font-weight:700;letter-spacing:-.028em;max-width:540px">
+      Answers to everything you might wonder.
+    </h2>
+  </div>
+
+  <div class="faq-list" style="margin-top:48px;display:flex;flex-direction:column;gap:12px">
+    {faqs.map((faq) => (
+      <details class="faq-item" style="border-radius:20px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);overflow:hidden;transition:background-color .2s ease, border-color .2s ease">
+        <summary style="padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;list-style:none;font-size:16.5px;font-weight:600;color:#F2F4F5;user-select:none">
+          <span>{faq.q}</span>
+          <span class="faq-icon" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:999px;background:rgba(255,255,255,.06);transition:transform .2s ease, background-color .2s ease">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </span>
+        </summary>
+        <div style="padding:0 24px 22px;font-size:15px;line-height:1.6;color:rgba(242,244,245,.7);font-weight:400">
+          {faq.a}
+        </div>
+      </details>
+    ))}
+  </div>
+
+  <!-- FAQPage Schema for Google Search Rich Results -->
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</section>
+
+<style>
+  /* Remove default summary marker */
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+  details summary::marker {
+    display: none;
+  }
+
+  /* Interactive hover and open states */
+  details.faq-item:hover {
+    background: rgba(255, 255, 255, .05) !important;
+    border-color: rgba(255, 255, 255, .11) !important;
+  }
+
+  details.faq-item[open] {
+    background: rgba(255, 255, 255, .055) !important;
+    border-color: rgba(170, 236, 88, .3) !important;
+  }
+
+  details.faq-item[open] .faq-icon {
+    transform: rotate(180deg);
+    background: rgba(170, 236, 88, .2) !important;
+    color: #AAEC58;
+  }
+
+  @media (max-width: 640px) {
+    details.faq-item summary {
+      padding: 18px 20px !important;
+      font-size: 15px !important;
+    }
+    details.faq-item div {
+      padding: 0 20px 18px !important;
+      font-size: 14px !important;
+    }
+  }
+</style>
