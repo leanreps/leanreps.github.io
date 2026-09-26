@@ -2,6 +2,10 @@
 // FAQ component
 const faqs = [
   {
+    q: "How do I get in touch with customer support?",
+    a: "You can email our team directly at support@leanreps.com. Whether you need help setting up your phone, have encountered a bug, or want to suggest new exercise movements, we are here to help and typically respond within 24 hours."
+  },
+  {
     q: "Does it really count every rep?",
     a: "Yes, and it's watching your body, not a timer. If a rep doesn't reach depth it still counts, but it pulls your depth score down — that's the point."
   },
@@ -77,15 +81,52 @@ const schema = {
 };
 ---
 
-<section id="faq" class="section-pad" style="max-width:960px;margin:0 auto;padding:112px 32px 0">
+<section id="support" class="section-pad" style="max-width:960px;margin:0 auto;padding:112px 32px 0">
+  <div id="faq" style="position:relative;top:-100px;visibility:hidden" aria-hidden="true"></div>
+  
   <div style="text-align:center">
-    <div style="font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#AAEC58">Common questions</div>
-    <h2 class="section-title" style="margin:14px auto 0;font-size:40px;line-height:1.1;font-weight:700;letter-spacing:-.028em;max-width:540px">
-      Answers to everything you might wonder.
+    <div style="font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#AAEC58">Support & FAQ</div>
+    <h2 class="section-title" style="margin:14px auto 0;font-size:40px;line-height:1.1;font-weight:700;letter-spacing:-.028em;max-width:580px">
+      Support / Frequently Asked Questions
     </h2>
+    <p style="margin:16px auto 0;font-size:16px;line-height:1.6;color:rgba(242,244,245,.65);max-width:540px">
+      Find quick answers below, or get in touch with our team anytime if you need a hand.
+    </p>
   </div>
 
-  <div class="faq-list" style="margin-top:48px;display:flex;flex-direction:column;gap:12px">
+  <!-- Direct Support Contact Card -->
+  <div class="support-card" style="margin-top:40px;border-radius:24px;background:rgba(255,255,255,.035);border:1px solid rgba(170,236,88,.22);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;overflow:hidden">
+    <div style="position:absolute;top:0;right:0;width:240px;height:100%;background:radial-gradient(circle at right center, rgba(170,236,88,0.08) 0%, transparent 70%);pointer-events:none"></div>
+    <div style="max-width:520px;position:relative;z-index:1">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:10px;background:rgba(170,236,88,.15);color:#AAEC58;flex:none">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </span>
+        <h3 style="margin:0;font-size:18.5px;font-weight:700;color:#F2F4F5;letter-spacing:-.015em">
+          Need direct help or have feedback?
+        </h3>
+      </div>
+      <p style="margin:10px 0 0;font-size:14.5px;line-height:1.55;color:rgba(242,244,245,.7)">
+        Whether you are running into tracking issues, have questions about your form scores, or want to suggest new features — we’re here for you.
+      </p>
+    </div>
+    <div class="support-action-box" style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex:none">
+      <a href="mailto:support@leanreps.com?subject=LeanReps%20Support%20Request" class="support-mail-btn" style="display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:14px;background:#AAEC58;color:#0B0E11;font-size:14px;font-weight:700;text-decoration:none;transition:transform .15s ease, background-color .15s ease, box-shadow .15s ease;box-shadow:0 10px 24px -8px rgba(170,236,88,.3)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+        </svg>
+        <span>Email Support</span>
+      </a>
+      <span style="font-size:12px;color:#8b99b0;font-family:'Space Grotesk',sans-serif">
+        support@leanreps.com &bull; Replies within 24h
+      </span>
+    </div>
+  </div>
+
+  <div class="faq-list" style="margin-top:32px;display:flex;flex-direction:column;gap:12px">
     {faqs.map((faq) => (
       <details class="faq-item" style="border-radius:20px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);overflow:hidden;transition:background-color .2s ease, border-color .2s ease">
         <summary style="padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;list-style:none;font-size:16.5px;font-weight:600;color:#F2F4F5;user-select:none">
@@ -131,6 +172,30 @@ const schema = {
     transform: rotate(180deg);
     background: rgba(170, 236, 88, .2) !important;
     color: #AAEC58;
+  }
+
+  /* Support card and button */
+  .support-mail-btn:hover {
+    background: #bcf772 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -6px rgba(170, 236, 88, .45) !important;
+  }
+
+  @media (max-width: 768px) {
+    .support-card {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      padding: 24px 20px !important;
+      gap: 20px !important;
+    }
+    .support-action-box {
+      align-items: flex-start !important;
+      width: 100% !important;
+    }
+    .support-mail-btn {
+      width: 100% !important;
+      justify-content: center !important;
+    }
   }
 
   @media (max-width: 640px) {

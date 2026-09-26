@@ -1,0 +1,308 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqs = [
+  {
+    q: "How do I get in touch with customer support?",
+    a: "You can email our team directly at support@leanreps.com. Whether you need help setting up your phone, have encountered a bug, or want to suggest new exercise movements, we are here to help and typically respond within 24 hours."
+  },
+  {
+    q: "Does it really count every rep?",
+    a: "Yes, and it's watching your body, not a timer. If a rep doesn't reach depth it still counts, but it pulls your depth score down — that's the point."
+  },
+  {
+    q: "What if it miscounts?",
+    a: "It can, mostly when your whole body isn't in frame or the room is very dark. Reframe and it recovers. There is no manual mid-set editing — just reframe and keep going."
+  },
+  {
+    q: "How do I set up my phone?",
+    a: "Prop it about four feet away at floor level, landscape, whole body in frame. A countdown gives you time to get down and set."
+  },
+  {
+    q: "Do I need a tripod?",
+    a: "No. Lean it against a wall, a water bottle, a shoe. It just needs to sit still and see all of you."
+  },
+  {
+    q: "Which push-ups does it support?",
+    a: "Standard push-ups, front view, right now. Incline, knee, and diamond variations are next, followed by squats and other bodyweight movements."
+  },
+  {
+    q: "Does it work in a dark room?",
+    a: "It needs enough light to clearly see your body outline. Normal indoor room lighting or daylight is plenty, but pitch darkness won't work."
+  },
+  {
+    q: "Is my video recorded or uploaded?",
+    a: "No. Frames are processed on your device and discarded immediately. Nothing is saved, nothing is sent, and there's no server to send it to."
+  },
+  {
+    q: "Do I need an account?",
+    a: "No account, no email, no login. Open it and start."
+  },
+  {
+    q: "Does it work offline?",
+    a: "Yes. Everything runs on your phone, so airplane mode is fine."
+  },
+  {
+    q: "Which phones does it work on?",
+    a: "LeanReps supports devices running Android 8.0 and above, as well as iOS 18.2 and newer."
+  },
+  {
+    q: "Will it drain my battery?",
+    a: "Very little — typically around 1–2% for a standard 10–15 minute workout session."
+  },
+  {
+    q: "Is it free?",
+    a: "LeanReps is completely free during our initial rollout while we bring the system to production grade with real users. You get full access to all features with zero ads and no credit card required. Once we reach our target standards and build our core community, we plan to introduce paid options."
+  },
+  {
+    q: "Do I need a watch or any other hardware?",
+    a: "No. Just your phone."
+  },
+  {
+    q: "What happens to my history if I get a new phone?",
+    a: "Your workout history is stored strictly on your local device for privacy. We are working on a local data export and transfer feature for an upcoming update."
+  },
+  {
+    q: "Do I need headphones for the voice cues?",
+    a: "No, your phone's built-in speaker is plenty. Voice cues can be toggled on or off per exercise in Settings, and you can also adjust default values and targets for each exercise."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
+---
+
+<Layout
+  title="Support & FAQ — LeanReps"
+  description="Customer Support and Frequently Asked Questions for LeanReps. Contact our team, get troubleshooting assistance, and discover how to get the most out of your workouts."
+  canonicalUrl="https://leanreps.com/support"
+>
+  <div style="background:#05070a;color:#F2F4F5;font-family:'Outfit',sans-serif;min-height:100vh;overflow-x:clip;display:flex;flex-direction:column">
+    
+    <!-- STICKY NAV -->
+    <nav style="position:sticky;top:0;z-index:20;background:rgba(11,14,17,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)">
+      <div class="nav-inner" style="max-width:1120px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between">
+        <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+          <svg width="28" height="28" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+            <path d="M52 68 L100 108 L148 60" stroke="#AAEC58" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M52 108 L100 68 L148 108" stroke="#AAEC58" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+            <line x1="80" y1="140" x2="120" y2="140" stroke="#AAEC58" stroke-width="12" stroke-linecap="round" opacity="0.85"/>
+          </svg>
+          <span style="font-size:20px;letter-spacing:-.02em;line-height:1"><span style="color:#F2F4F5;font-weight:700">Lean</span><span style="color:#F2F4F5;font-weight:400;opacity:0.75">Reps</span></span>
+        </a>
+        <a href="/" style="display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:#AAEC58;text-decoration:none">
+          <span>&larr;</span> Back to Home
+        </a>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main style="flex:1;max-width:920px;margin:0 auto;padding:64px 32px 80px;width:100%">
+      
+      <!-- HERO HEADER -->
+      <div style="text-align:center;margin-bottom:48px">
+        <div style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#AAEC58">Support & Help Center</div>
+        <h1 style="margin:14px auto 0;font-size:48px;line-height:1.06;font-weight:700;letter-spacing:-.03em">
+          How can we help you?
+        </h1>
+        <p style="margin:18px auto 0;max-width:580px;font-size:16.5px;line-height:1.6;color:rgba(242,244,245,.7)">
+          Whether you need assistance with rep counting, have a question about device setup, or want to suggest new features, our team is ready to assist.
+        </p>
+      </div>
+
+      <!-- PRIMARY CONTACT CARD -->
+      <div class="support-hero-card" style="border-radius:28px;background:rgba(255,255,255,.04);border:1px solid rgba(170,236,88,.25);padding:36px 36px;position:relative;overflow:hidden;box-shadow:0 20px 50px -20px rgba(0,0,0,0.6)">
+        <div style="position:absolute;top:0;right:0;width:320px;height:100%;background:radial-gradient(circle at right center, rgba(170,236,88,0.1) 0%, transparent 70%);pointer-events:none"></div>
+        <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap">
+          <div style="max-width:520px">
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:rgba(170,236,88,.15);color:#AAEC58;flex:none">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </span>
+              <h2 style="margin:0;font-size:22px;font-weight:700;color:#F2F4F5;letter-spacing:-.015em">
+                Email Customer Support
+              </h2>
+            </div>
+            <p style="margin:14px 0 0;font-size:15px;line-height:1.6;color:rgba(242,244,245,.75)">
+              Send us an email with details about your inquiry, bug report, or feedback. We respond directly to every user inquiry.
+            </p>
+            <div style="margin-top:14px;font-size:13.5px;color:#8b99b0;display:flex;align-items:center;gap:8px">
+              <span style="width:7px;height:7px;border-radius:999px;background:#AAEC58;display:inline-block"></span>
+              <span>Average response time: <strong>within 24 hours</strong></span>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+            <a
+              href="mailto:support@leanreps.com?subject=LeanReps%20Support%20Request"
+              class="support-mail-btn"
+              style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:14px;background:#AAEC58;color:#0B0E11;font-size:15px;font-weight:700;text-decoration:none;transition:transform .15s ease, background-color .15s ease, box-shadow .15s ease;box-shadow:0 10px 24px -8px rgba(170,236,88,.35)"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              <span>Email Support</span>
+            </a>
+            <span style="font-size:12.5px;color:#8b99b0;padding-left:4px">
+              Direct: <a href="mailto:support@leanreps.com" style="color:#AAEC58;text-decoration:underline">support@leanreps.com</a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- APP INFO & SYSTEM COMPATIBILITY CARDS -->
+      <div class="support-info-grid" style="margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:20px">
+        <div style="background:rgba(255,255,255,.035);border-radius:20px;border:1px solid rgba(255,255,255,.07);padding:24px 22px">
+          <div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#AAEC58;margin-bottom:8px">Compatibility</div>
+          <h3 style="margin:0;font-size:17px;font-weight:600;color:#F2F4F5">Platform Requirements</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.55;color:rgba(242,244,245,.65)">
+            LeanReps runs on iOS 18.2+ and Android 8.0+. Standard device cameras are fully supported with zero extra hardware needed.
+          </p>
+        </div>
+
+        <div style="background:rgba(255,255,255,.035);border-radius:20px;border:1px solid rgba(255,255,255,.07);padding:24px 22px">
+          <div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#AAEC58;margin-bottom:8px">Privacy First</div>
+          <h3 style="margin:0;font-size:17px;font-weight:600;color:#F2F4F5">100% Local On-Device</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.55;color:rgba(242,244,245,.65)">
+            Camera frames are analyzed in real time on your phone and discarded immediately. No video is ever stored or transmitted.
+          </p>
+        </div>
+
+        <div style="background:rgba(255,255,255,.035);border-radius:20px;border:1px solid rgba(255,255,255,.07);padding:24px 22px">
+          <div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#AAEC58;margin-bottom:8px">Resources</div>
+          <h3 style="margin:0;font-size:17px;font-weight:600;color:#F2F4F5">Helpful Links</h3>
+          <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px;font-size:13.5px">
+            <a href="/privacypolicy" style="color:#AAEC58;text-decoration:none;display:inline-flex;align-items:center;gap:4px">
+              <span>Privacy Policy</span> &rarr;
+            </a>
+            <a href="/#how" style="color:#AAEC58;text-decoration:none;display:inline-flex;align-items:center;gap:4px">
+              <span>How It Works Guide</span> &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ SECTION -->
+      <div style="margin-top:64px">
+        <div style="text-align:center;margin-bottom:32px">
+          <div style="font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#AAEC58">Knowledge Base</div>
+          <h2 style="margin:12px 0 0;font-size:32px;font-weight:700;letter-spacing:-.025em">
+            Frequently Asked Questions
+          </h2>
+          <p style="margin:10px auto 0;font-size:15px;line-height:1.55;color:rgba(242,244,245,.65);max-width:480px">
+            Everything you need to know about workout counting, privacy, and device setup.
+          </p>
+        </div>
+
+        <div class="faq-list" style="display:flex;flex-direction:column;gap:12px">
+          {faqs.map((faq) => (
+            <details class="faq-item" style="border-radius:20px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);overflow:hidden;transition:background-color .2s ease, border-color .2s ease">
+              <summary style="padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;list-style:none;font-size:16.5px;font-weight:600;color:#F2F4F5;user-select:none">
+                <span>{faq.q}</span>
+                <span class="faq-icon" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:999px;background:rgba(255,255,255,.06);transition:transform .2s ease, background-color .2s ease">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </span>
+              </summary>
+              <div style="padding:0 24px 22px;font-size:15px;line-height:1.6;color:rgba(242,244,245,.7);font-weight:400">
+                {faq.a}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer style="max-width:1120px;margin:0 auto;padding:48px 32px;border-top:1px solid rgba(255,255,255,.07);width:100%">
+      <div class="footer-inner" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px">
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:10px">
+            <svg width="22" height="22" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+              <path d="M52 68 L100 108 L148 60" stroke="#AAEC58" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M52 108 L100 68 L148 108" stroke="#AAEC58" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+              <line x1="80" y1="140" x2="120" y2="140" stroke="#AAEC58" stroke-width="12" stroke-linecap="round" opacity="0.85"/>
+            </svg>
+            <span style="font-size:14px;letter-spacing:-.01em;line-height:1"><span style="color:#F2F4F5;font-weight:700">Lean</span><span style="color:#F2F4F5;font-weight:400;opacity:0.75">Reps</span></span>
+          </div>
+          <span class="footer-copy" style="font-size:12.5px;font-weight:400;color:rgba(139,153,176,.65)">© 2026 LeanReps. All rights reserved</span>
+        </div>
+        <div style="display:flex;gap:26px;font-size:13px;font-weight:500;color:#8b99b0">
+          <a href="/" style="color:#8b99b0;text-decoration:none;transition:color .15s ease">Home</a>
+          <a href="/privacypolicy" style="color:#8b99b0;text-decoration:none;transition:color .15s ease">Privacy</a>
+          <a href="/support" style="color:#AAEC58;text-decoration:none;transition:color .15s ease">Support</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- FAQPage Schema for Google Search Rich Results -->
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</Layout>
+
+<style>
+  /* Remove default summary marker */
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+  details summary::marker {
+    display: none;
+  }
+
+  /* Interactive hover and open states */
+  details.faq-item:hover {
+    background: rgba(255, 255, 255, .05) !important;
+    border-color: rgba(255, 255, 255, .11) !important;
+  }
+
+  details.faq-item[open] {
+    background: rgba(255, 255, 255, .055) !important;
+    border-color: rgba(170, 236, 88, .3) !important;
+  }
+
+  details.faq-item[open] .faq-icon {
+    transform: rotate(180deg);
+    background: rgba(170, 236, 88, .2) !important;
+    color: #AAEC58;
+  }
+
+  .support-mail-btn:hover {
+    background: #bcf772 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -6px rgba(170, 236, 88, .45) !important;
+  }
+
+  @media (max-width: 768px) {
+    .support-hero-card {
+      padding: 28px 22px !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    details.faq-item summary {
+      padding: 18px 20px !important;
+      font-size: 15px !important;
+    }
+    details.faq-item div {
+      padding: 0 20px 18px !important;
+      font-size: 14px !important;
+    }
+  }
+</style>
