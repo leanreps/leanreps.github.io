@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = "LeanReps — Focus on your set, We’ll handle the rest",
-  description = "LeanReps uses your camera to automatically count your push-ups and score your depth, elbow tuck, and tempo. No mid-set screen taps. Everything runs entirely on your device for total privacy.",
+  title = "LeanReps — AI Push-Up Counter & Form Tracker App",
+  description = "LeanReps automatically counts your push-ups and scores depth, elbow tuck, and tempo with your camera. 100% on-device & private. Download free.",
   image = "https://leanreps.com/og-image.png",
   canonicalUrl = "https://leanreps.com/",
 } = Astro.props;
@@ -38,6 +38,8 @@ const {
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="LeanReps" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -51,7 +53,7 @@ const {
     <meta property="twitter:url" content={canonicalUrl} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <meta property="twitter:image" content={image} />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
