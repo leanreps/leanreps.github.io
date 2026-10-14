@@ -8,11 +8,71 @@ import Streak from '../components/Streak.astro';
 import ProgressPrivacy from '../components/ProgressPrivacy.astro';
 import Cta from '../components/Cta.astro';
 import Footer from '../components/Footer.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://leanreps.com/#website",
+      "url": "https://leanreps.com/",
+      "name": "LeanReps",
+      "description": "AI-powered camera push-up counter and form analysis app that runs 100% on-device.",
+      "publisher": {
+        "@id": "https://leanreps.com/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://leanreps.com/#organization",
+      "name": "LeanReps",
+      "url": "https://leanreps.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://leanreps.com/apple-touch-icon.png",
+        "width": 180,
+        "height": 180
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "email": "support@leanreps.com"
+      }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://leanreps.com/#app",
+      "name": "LeanReps",
+      "alternateName": "LeanReps — AI Push-Up Counter & Form Tracker",
+      "operatingSystem": "iOS 18.2+, Android 8.0+",
+      "applicationCategory": "HealthAndFitnessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "description": "LeanReps automatically counts your push-ups and scores depth, elbow tuck, and tempo using your phone's camera. 100% on-device and private.",
+      "downloadUrl": "https://apps.apple.com/in/app/leanreps/id6813911526",
+      "installUrl": "https://apps.apple.com/in/app/leanreps/id6813911526",
+      "screenshot": "https://leanreps.com/og-image.png",
+      "featureList": [
+        "Hands-free automatic push-up counting via device camera",
+        "Real-time depth and range of motion (ROM) scoring",
+        "Elbow tuck and joint safety tracking to prevent shoulder flare",
+        "Cadence and tempo analysis",
+        "100% on-device processing with zero cloud video upload",
+        "Offline workout tracking without account or login"
+      ]
+    }
+  ]
+};
 ---
 
 <Layout
   title="LeanReps — AI Push-Up Counter & Form Tracker App"
   description="LeanReps automatically counts your push-ups and scores depth, elbow tuck, and tempo with your camera. 100% on-device & private. Download free."
+  schema={schema}
 >
   <div style="background:#05070a;color:#F2F4F5;font-family:'Outfit',sans-serif;min-height:100vh;overflow-x:clip">
     <Nav />

@@ -4,6 +4,7 @@ interface Props {
   description?: string;
   image?: string;
   canonicalUrl?: string;
+  schema?: Record<string, any>;
 }
 
 const {
@@ -11,6 +12,7 @@ const {
   description = "LeanReps automatically counts your push-ups and scores depth, elbow tuck, and tempo with your camera. 100% on-device & private. Download free.",
   image = "https://leanreps.com/og-image.png",
   canonicalUrl = "https://leanreps.com/",
+  schema,
 } = Astro.props;
 ---
 
@@ -54,6 +56,11 @@ const {
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />
+
+    <!-- Structured Data (JSON-LD) -->
+    {schema && (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    )}
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
